@@ -15,7 +15,9 @@ const content = {
   8: 'before:content-["8"]',
   9: 'before:content-["9"]',
   10: 'before:content-["10"]',
-} as const
+}
+
+type Content = keyof typeof content
 
 export default function Popular({
   pdRcmdFavSvrList2: pdRcmdFavSvrList2,
@@ -38,7 +40,7 @@ export default function Popular({
             className={clsx(
               `relative flex items-center px-4 py-6`,
               `before:absolute before:top-6 before:-left-4 before:w-6 before:h-6 before:font-bold before:text-2xl before:text-center before:text-blue-600`,
-              content[index + 1]
+              content[(index + 1) as Content]
             )}
           >
             <em className="w-full min-w-0">
