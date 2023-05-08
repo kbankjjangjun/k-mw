@@ -5,6 +5,7 @@ import { useEffect, useState } from "react";
 import Layout from "@/components/layout/layout";
 import Image from "next/image";
 import Link from "next/link";
+import Head from "next/head";
 
 // export async function getServerSideProps(context: any) {
 //   const { id } = context.query
@@ -39,6 +40,8 @@ export default function ProductDetail() {
   const [error, setError] = useState<any>(null);
 
   useEffect(() => {
+    if (id == null) return;
+    
     fetch(`/datas/products/${id}.json`)
       .then((res) => res.json())
       .then((data) => setData(data))
@@ -55,8 +58,18 @@ export default function ProductDetail() {
 
   return (
     <Layout footerType="02">
-      <link href="https://m.kbanknow.com/resource/css/mmk/common.css"></link>
-      <link href="https://m.kbanknow.com/resource/css/cmm/kbankform.css"></link>
+      <Head>
+        <link
+        type="text/css"
+          href="https://m.kbanknow.com/resource/css/cmm/common.css"
+          rel="stylesheet"
+        />
+        <link
+        type="text/css"
+          href="https://m.kbanknow.com/resource/css/cmm/kbankform.css"
+          rel="stylesheet"
+        />
+      </Head>
 
       <div className="mobile">
         <div className="content">
