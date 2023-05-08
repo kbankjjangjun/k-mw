@@ -9,8 +9,6 @@ const navItems = [
 export default function Navbar() {
   const router = useRouter()
 
-  console.log(router.pathname.slice(1).split('/'))
-
   // sendAMPForEvent("eventzone/event_list/view", {});
 
   return (

@@ -21,7 +21,6 @@ export default function FixedBottomCTA({
 }: FixedBottomCTAProps) {
   const { bdu, sid } = useContext(globalDataContext)
   const goToAppStore = () => {
-    console.log(bdu, sid) // TODO: bdu, sid 이용해서 app 설치 이동 url 만들어야 함
     window.open('market://details?id=com.android.chrome', '_blank')
   }
 
