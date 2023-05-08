@@ -41,7 +41,7 @@ export default function ProductDetail() {
 
   useEffect(() => {
     if (id == null) return;
-    
+
     fetch(`/datas/products/${id}.json`)
       .then((res) => res.json())
       .then((data) => setData(data))
@@ -57,53 +57,9 @@ export default function ProductDetail() {
   }
 
   return (
-    <Layout footerType="02">
-      <Head>
-        <link
-        type="text/css"
-          href="https://m.kbanknow.com/resource/css/cmm/common.css"
-          rel="stylesheet"
-        />
-        <link
-        type="text/css"
-          href="https://m.kbanknow.com/resource/css/cmm/kbankform.css"
-          rel="stylesheet"
-        />
-      </Head>
-
+    <Layout footerType="02" importKbankCss>
       <div className="mobile">
         <div className="content">
-          <div className="inner_box proDetail">
-            <p className="product_tit">
-              <strong>플러스박스</strong>
-            </p>
-            <div className="share">
-              <a href="#" role="button">
-                <Image
-                  src={`${process.env.NEXT_PUBLIC_DOMAIN_URL}/resource/img/btn/btn_share.gif`}
-                  alt="공유하기"
-                  width="54"
-                  height="51"
-                />
-              </a>
-              <div className="menu_more" style={{ display: " none" }}>
-                <strong>
-                  상품을 공유할 때<br />
-                  선택 된 서비스 화면으로 이동합니다.
-                </strong>
-                <ul>
-                  <li>
-                    <a href="#" title="새 창 열림" id="sns_facebookPc">
-                      페이스북으로 보내기
-                    </a>
-                  </li>
-                  <li className="more_close">
-                    <a href="#">닫기</a>
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </div>
 
           <div className="comCont">
             {/* lon.js, dpt.js에서 id="div_reSales"을 가지고 show, hide 제어 */}
@@ -156,10 +112,12 @@ export default function ProductDetail() {
                 dangerouslySetInnerHTML={{
                   __html: decodeURIComponent(
                     data.OUTP_DATA_CNTNT.replace(/\+/g, " ")
-                  ).replace(
-                    /data-role="animation-item"/g,
-                    'data-role="animation-item" class="active"'
-                  ),
+                  )
+                    .replace(
+                      /data-role="animation-item"/g,
+                      'data-role="animation-item" class="active"'
+                    )
+                    .replace(/\/resource/g, ''),
                 }}
               ></div>
             )}
@@ -173,7 +131,7 @@ export default function ProductDetail() {
                   ).replace(
                     /data-role="animation-item"/g,
                     'data-role="animation-item" class="active"'
-                  ),
+                  ).replace(/\/resource/g, 'https://m.kbanknow.com/resource'),
                 }}
               ></div>
             )}
@@ -202,3 +160,9 @@ export default function ProductDetail() {
     </Layout>
   );
 }
+
+ProductDetail.getInitialProps = async (ctx: any) => {
+  return {
+    importKbankCss: true,
+  };
+};
