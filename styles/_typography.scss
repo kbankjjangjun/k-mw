@@ -1,0 +1,32 @@
+@use "sass:math";
+
+@function strip-unit($number) {
+  @if type-of($number) == 'number' and not unitless($number) {
+    @return math.div($number, $number * 0 + 1);
+  }
+
+  @return $number;
+}
+
+@mixin _typography($name, $font-size, $line-height, $skeleton-border-radius) {
+  $font-size-number: strip-unit($font-size);
+
+  .typography-#{$name},
+  .font-size--#{$font-size-number} {
+    font-size: $font-size;
+    font-size: var(--k-font-size-#{$font-size-number});
+    line-height: $line-height;
+    line-height: var(--k-line-height-#{$font-size-number});
+  }
+}
+
+@include _typography('t1', 42px, 1.25, 8px);
+@include _typography('t2', 36px, 1.3, 7px);
+@include _typography('t3', 34px, 1.305, 6px);
+@include _typography('t4', 33px, 1.305, 6px);
+@include _typography('t5', 27px, 1.333, 5.5px);
+@include _typography('t6', 25px, 1.36, 5px);
+@include _typography('t7', 21px, 1.429, 5px);
+@include _typography('t8', 20px, 1.45, 5px);
+@include _typography('t9', 16px, 1.5, 5px);
+@include _typography('t10', 15px, 1.5, 5px);

@@ -1,0 +1,36 @@
+{
+  "mweb_bdu": "07251bd5d67cc436f580b00e840cbdfca2c43415a03b8188f80dacc3f8b38f39",
+  "mweb_sid": "lsNVM6LomVqowrUFwm21YkIChVZnUih0RHNNPzGnasu03WzkxId8Z8k0JzKYbTe2.aXNid2FzX2RvbWFpbi9td2ViU3ZyMTE=",
+  "banners": [
+    {
+      "key": "1",
+      "title": "부자될 권리",
+      "titleKeyword": "습관",
+      "subTitle": "작은 목표가 습관을 만들고 습관이 쌓여 꿈을 이룬다",
+      "backgroundImgUrl": "/images/reform/img_01.png"
+    },
+    {
+      "key": "2",
+      "title": "부자될 권리",
+      "titleKeyword": "용기",
+      "subTitle": "빌릴 수 있는 용기는 돈 벌 수 있는 무기가 된다",
+      "backgroundImgUrl": "/images/reform/img_02.png"
+    },
+
+    {
+      "key": "3",
+      "title": "부자될 권리",
+      "titleKeyword": "투자",
+      "subTitle": "내가 일해서 벌면 근로자 내 돈이 일해서 벌면 투자자",
+      "backgroundImgUrl": "/images/reform/img_03.png"
+    },
+
+    {
+      "key": "4",
+      "title": "부자되는 습관 만들기",
+      "titleKeyword": "머니톡",
+      "subTitle": "흐름을 읽어야 돈이 보인다 돈에 대한 모든 것",
+      "backgroundImgUrl": "/images/reform/img_04.png"
+    }
+  ]
+}
