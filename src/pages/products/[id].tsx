@@ -1,14 +1,10 @@
-import request from '@/service/http'
-import { useRouter } from 'next/router'
-import { useEffect, useState } from 'react'
+import request from "@/service/http";
+import { useRouter } from "next/router";
+import { useEffect, useState } from "react";
 
-import Layout from '@/components/layout/layout'
-import Image from 'next/image'
-import Link from 'next/link'
-import Head from 'next/head'
-
-import '../../../public/styles/common.css'
-import '../../../public/styles/kbankform.css'
+import Layout from "@/components/layout/layout";
+import Image from "next/image";
+import Link from "next/link";
 
 // export async function getServerSideProps(context: any) {
 //   const { id } = context.query
@@ -35,34 +31,32 @@ import '../../../public/styles/kbankform.css'
 // }
 
 export default function ProductDetail() {
-  const router = useRouter()
-  const { id } = router.query
+  const router = useRouter();
+  const { id } = router.query;
 
-  const [data, setData] = useState<any>(null)
+  const [data, setData] = useState<any>(null);
 
-  const [error, setError] = useState<any>(null)
+  const [error, setError] = useState<any>(null);
 
   useEffect(() => {
     fetch(`/datas/products/${id}.json`)
       .then((res) => res.json())
       .then((data) => setData(data))
-      .catch((error) => setError(error))
-  }, [id])
+      .catch((error) => setError(error));
+  }, [id]);
 
   if (error) {
     return (
       <Layout>
         <h1>404 Not Found</h1>
       </Layout>
-    )
+    );
   }
 
   return (
     <Layout footerType="02">
-      {/* <Head>
-        <link href="https://m.kbanknow.com/resource/css/mmk/common.css"></link>
-        <link href="https://m.kbanknow.com/resource/css/cmm/kbankform.css"></link>
-      </Head> */}
+      <link href="https://m.kbanknow.com/resource/css/mmk/common.css"></link>
+      <link href="https://m.kbanknow.com/resource/css/cmm/kbankform.css"></link>
 
       <div className="mobile">
         <div className="content">
@@ -79,7 +73,7 @@ export default function ProductDetail() {
                   height="51"
                 />
               </a>
-              <div className="menu_more" style={{ display: ' none' }}>
+              <div className="menu_more" style={{ display: " none" }}>
                 <strong>
                   상품을 공유할 때<br />
                   선택 된 서비스 화면으로 이동합니다.
@@ -103,11 +97,11 @@ export default function ProductDetail() {
             {data && data.SALES_STOP_CNTNT && (
               <div
                 id="div_reSales"
-                style={{ display: 'none' }}
+                style={{ display: "none" }}
                 className="fnclPdDetail"
                 dangerouslySetInnerHTML={{
                   __html: decodeURIComponent(
-                    data.SALES_STOP_CNTNT.replace(/\+/g, ' ')
+                    data.SALES_STOP_CNTNT.replace(/\+/g, " ")
                   ).replace(
                     /data-role="animation-item"/g,
                     'data-role="animation-item" class="active"'
@@ -121,7 +115,7 @@ export default function ProductDetail() {
                 className="fnclPdDetail"
                 dangerouslySetInnerHTML={{
                   __html: decodeURIComponent(
-                    data.FNCL_PD_DTL_CNTNT.replace(/\+/g, ' ')
+                    data.FNCL_PD_DTL_CNTNT.replace(/\+/g, " ")
                   ).replace(
                     /data-role="animation-item"/g,
                     'data-role="animation-item" class="active"'
@@ -148,7 +142,7 @@ export default function ProductDetail() {
                 className="fnclPdDetail"
                 dangerouslySetInnerHTML={{
                   __html: decodeURIComponent(
-                    data.OUTP_DATA_CNTNT.replace(/\+/g, ' ')
+                    data.OUTP_DATA_CNTNT.replace(/\+/g, " ")
                   ).replace(
                     /data-role="animation-item"/g,
                     'data-role="animation-item" class="active"'
@@ -162,7 +156,7 @@ export default function ProductDetail() {
                 className="fnclPdDetail"
                 dangerouslySetInnerHTML={{
                   __html: decodeURIComponent(
-                    data.FNCL_PD_SUPPL_CNTNT.replace(/\+/g, ' ')
+                    data.FNCL_PD_SUPPL_CNTNT.replace(/\+/g, " ")
                   ).replace(
                     /data-role="animation-item"/g,
                     'data-role="animation-item" class="active"'
@@ -193,5 +187,5 @@ export default function ProductDetail() {
         </div>
       </div>
     </Layout>
-  )
+  );
 }
