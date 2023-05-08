@@ -30,10 +30,10 @@ export default function FixedBottomCTA({
       className={clsx('fixed', 'bottom-0', 'w-full', 'text-center')}
     >
       <div
-        className={clsx('m-2', 'rounded-md', 'z-10', bgColorVariants[bgColor])}
+        className={clsx('m-2', 'rounded-md', 'z-10',  'bg-k-lime')}
       >
         <button
-          className={clsx('p-3', 'font-bold', 'text-lg', colorVariants[color])}
+          className={clsx('p-3', 'font-bold', 'text-lg', 'text-black')}
         >
           {title}
         </button>

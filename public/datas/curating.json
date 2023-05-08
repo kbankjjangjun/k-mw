@@ -385,7 +385,7 @@
       "lastChngUserId": "40160418",
       "mwUseYn": "Y",
       "expuYn": "Y",
-      "imgFile": " /resource/img/bim/ico_prod_home_wm_01.svg",
+      "imgFile": "/resource/img/bim/ico_prod_home_wm_01.svg",
       "fnclNm": "머니톡",
       "lnkVal": null
     },
@@ -407,7 +407,7 @@
       "lastChngUserId": "40160418",
       "mwUseYn": null,
       "expuYn": "Y",
-      "imgFile": " /resource/img/bim/ico_prod_home_wm_02.svg",
+      "imgFile": "/resource/img/bim/ico_prod_home_wm_02.svg",
       "fnclNm": "내 신용관리",
       "lnkVal": null
     },
