@@ -15,7 +15,7 @@ const content = {
   8: 'before:content-["8"]',
   9: 'before:content-["9"]',
   10: 'before:content-["10"]',
-} as const
+}
 
 export default function Popular({
   pdRcmdFavSvrList2: pdRcmdFavSvrList2,
@@ -42,8 +42,7 @@ export default function Popular({
             <a
               className={clsx(
                 `relative flex items-center px-4 py-6`,
-                `before:absolute before:top-6 before:-left-4 before:w-6 before:h-6 before:font-bold before:text-2xl before:text-center before:text-blue-600`,
-                content[index + 1]
+                `before:absolute before:top-6 before:-left-4 before:w-6 before:h-6 before:font-bold before:text-2xl before:text-center before:text-blue-600`
               )}
             >
               <em className="w-full min-w-0">
