@@ -1,4 +1,5 @@
 // Next.js API route support: https://nextjs.org/docs/api-routes/introduction
+import { ProductKey } from '@/types/product'
 import type { NextApiRequest, NextApiResponse } from 'next'
 
 interface Data {
@@ -10,7 +11,7 @@ interface Data {
 }
 
 export interface IProductTab {
-  CMN_CD_DTL_ID: string
+  CMN_CD_DTL_ID: ProductKey
   CMN_CD_ABRV_NM: string
   CMN_CD_NM: string
   isNew: boolean

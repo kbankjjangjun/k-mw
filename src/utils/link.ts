@@ -1,6 +1,6 @@
 export function openKbankApp(menuId: string, bdu: string, sid: string) {
   let androidPackage = 'com.kbankwith.smartbank'
-  let iosPackage = 'ukbanksmartbankweb://?'
+  let iosPackage = 'ukbanksmartkbankweb://?'
 
   const data = {
     menuid: menuId,

@@ -8,8 +8,6 @@ import { globalDataContext } from '@/pages/_app'
 import clsx from 'clsx'
 import { useContext } from 'react'
 
-import { openKbankApp } from '@/utils/link'
-
 interface FixedBottomCTAProps {
   title: string
   color?: ColorValue
@@ -23,7 +21,8 @@ export default function FixedBottomCTA({
 }: FixedBottomCTAProps) {
   const { bdu, sid } = useContext(globalDataContext)
   const goToAppStore = () => {
-    openKbankApp("PBKMAN000000", "", "")
+    console.log(bdu, sid) // TODO: bdu, sid 이용해서 app 설치 이동 url 만들어야 함
+    window.open('market://details?id=com.android.chrome', '_blank')
   }
 
   return (
@@ -32,10 +31,10 @@ export default function FixedBottomCTA({
       className={clsx('fixed', 'bottom-0', 'w-full', 'text-center')}
     >
       <div
-        className={clsx('m-2', 'rounded-md', 'z-10',  'bg-k-lime')}
+        className={clsx('m-2', 'rounded-md', 'z-10', bgColorVariants[bgColor])}
       >
         <button
-          className={clsx('p-3', 'font-bold', 'text-lg', 'text-black')}
+          className={clsx('p-3', 'font-bold', 'text-lg', colorVariants[color])}
         >
           {title}
         </button>

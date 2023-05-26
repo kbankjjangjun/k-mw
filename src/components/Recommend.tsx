@@ -5,6 +5,7 @@ import { getWgtId } from '@/constants/widget'
 
 import { useOverlay } from '@toss/use-overlay'
 import BottomSheet from './BottomSheet'
+import { openKbankApp } from '@/utils/link'
 
 export default function Recommend({
   pdRcmdFavSvrList3,
@@ -16,7 +17,7 @@ export default function Recommend({
       <div className="py-10">
         <Image
           src={`${process.env.NEXT_PUBLIC_DOMAIN_URL}/resource/img/mmk/main/products/home/PDhome_logo.svg`}
-          alt="make money"
+          alt="make money logo"
           width="150"
           height="30"
         />
@@ -66,9 +67,7 @@ function RecommendItem({ r }: { r: IRecommend }) {
             <div className="r2popupfoot_btnpanel pt-3">
               <button
                 className="w-full bg-[#0f0060] text-white rounded-lg h-12"
-                id="openApp"
-                data-open-mnu="FPMINV020000"
-                data-theme-color=""
+                onClick={() => openKbankApp('FPMINV020000', '', '')}
               >
                 앱 바로가기
               </button>

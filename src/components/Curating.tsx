@@ -20,15 +20,21 @@ export default function Curating({
   pdRcmdFavSvrList1: ICurating[]
 }) {
   return (
-    <ul className={container}>
-      <SnapEmptyBox />
+    <>
+      <div className="px-10 pt-8 pb-4">
+        <div className="text-2xl font-bold">주목할 만한 상품</div>
+      </div>
 
-      {pdRcmdFavSvrList1.map((c: ICurating) => (
-        <FrmCard key={c.pdSqn} c={c} />
-      ))}
+      <ul className={container}>
+        <SnapEmptyBox />
 
-      <SnapEmptyBox />
-    </ul>
+        {pdRcmdFavSvrList1.map((c: ICurating) => (
+          <FrmCard key={c.pdSqn} c={c} />
+        ))}
+
+        <SnapEmptyBox />
+      </ul>
+    </>
   )
 }
 
