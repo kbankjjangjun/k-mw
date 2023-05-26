@@ -9,6 +9,7 @@ import { Swiper, SwiperSlide } from 'swiper/react'
 import Layout from '@/components/layout/layout'
 import { ProductKey, ProductValue } from '@/types/product'
 import clsx from 'clsx'
+import Head from 'next/head'
 
 interface Temp {
   dtlId: string
@@ -65,6 +66,44 @@ export default function ProductsList({
 
   return (
     <Layout>
+      <Head>
+        <title>상품 리스트 - 케이뱅크</title>
+        <meta httpEquiv="Content-Type" content="text/html;charset=UTF-8" />
+        <meta charSet="utf-8" />
+        <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
+        <meta httpEquiv="cache-control" content="no-cache" />
+        <meta httpEquiv="expires" content="0" />
+        <meta httpEquiv="pragma" content="no-cache" />
+        <meta
+          name="viewport"
+          content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0"
+        />
+        <meta
+          name="description"
+          content="제1금융권 1호 인터넷전문은행 케이뱅크"
+        />
+        <meta
+          name="format-detection"
+          content="telephone=no, address=no, email=no"
+        />
+        <meta
+          property="og:url"
+          content="https://m.kbanknow.com/ib20/mnu/MWBMAN020002"
+        />
+        <meta property="og:type" content="website" />
+        <meta property="og:title" content="케이뱅크(Kbank) - make money" />
+        <meta
+          property="og:description"
+          content="우리는 모두 부자가 될 권리가 있다"
+        />
+        <meta
+          property="og:image"
+          content="https://m.kbanknow.com/resource/img/bim/Kbank_kakao_og.png"
+        />
+
+        <link rel="icon" href="/favicon.png" />
+      </Head>
+
       <div className="pt-10">
         <div className="fixed top-14 z-10 bg-white h-12 w-full">
           <ProductCategory
