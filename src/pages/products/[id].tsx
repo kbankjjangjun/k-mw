@@ -5,8 +5,8 @@ import Layout from '@/components/layout/layout'
 import Image from 'next/image'
 import Link from 'next/link'
 
-import '../../../public/styles/common.css'
-import '../../../public/styles/kbankform.css'
+// import '../../../public/styles/common.css'
+// import '../../../public/styles/kbankform.css'
 
 // export async function getServerSideProps(context: any) {
 //   const { id } = context.query
