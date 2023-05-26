@@ -1,5 +1,4 @@
 import type { AppProps } from 'next/app'
-import Layout from '@/components/layout/layout'
 import { css, Global } from '@emotion/react'
 import normalize from 'emotion-normalize'
 

@@ -1,11 +1,9 @@
-import request from '@/service/http'
 import { useRouter } from 'next/router'
 import { useEffect, useState } from 'react'
 
 import Layout from '@/components/layout/layout'
 import Image from 'next/image'
 import Link from 'next/link'
-import Head from 'next/head'
 
 import '../../../public/styles/common.css'
 import '../../../public/styles/kbankform.css'
@@ -59,11 +57,6 @@ export default function ProductDetail() {
 
   return (
     <Layout footerType="02">
-      {/* <Head>
-        <link href="https://m.kbanknow.com/resource/css/mmk/common.css"></link>
-        <link href="https://m.kbanknow.com/resource/css/cmm/kbankform.css"></link>
-      </Head> */}
-
       <div className="mobile">
         <div className="content">
           <div className="inner_box proDetail">
