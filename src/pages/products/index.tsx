@@ -255,82 +255,78 @@ function ProductCategoryDetail({
 
 function Product({ pm }: any) {
   return (
-    <li className="py-4">
-      <a className="flex py-4 border-b-2 border-b-gray-100">
-        <div
-          className={`img-figure relative pr-8`} // fnclPdDsCd가 '04'이면 card-type 추가
-        >
-          {pm.rprsImgFileNm && (
-            <Image
-              src={`${process.env.NEXT_PUBLIC_DOMAIN_URL}/${pm.rprsImgFileNm}`}
-              width={48}
-              height={48}
-              alt=""
-            />
+    <li className="py-4 flex border-b-2 border-b-gray-100">
+      <div
+        className={`img-figure relative pr-8`} // fnclPdDsCd가 '04'이면 card-type 추가
+      >
+        {pm.rprsImgFileNm && (
+          <Image
+            src={`${process.env.NEXT_PUBLIC_DOMAIN_URL}/${pm.rprsImgFileNm}`}
+            width={48}
+            height={48}
+            alt=""
+          />
+        )}
+      </div>
+      <div className="flex-1 overflow-hidden">
+        <em className="flex items-center">
+          <span className="tit-prd font-bold text-2xl">{pm.chnlPdNm}</span>
+          {pm.pdListBdg1 && (
+            <span className="ico-new inline-block text-sm ml-2 p-1 text-white bg-blue-600 rounded-full">
+              {pm.pdListBdg1}
+            </span>
+          )}
+
+          {pm.pdListBdg2 && (
+            <div className="ico-new-line ml-2 text-sm text-blue-600 border-2 p-1 border-blue-600 inline-block rounded-2xl">
+              {pm.pdListBdg2}
+            </div>
+          )}
+        </em>
+        <div className="txt-lv02 mt-1 text-gray-600">{pm.mainTit}</div>
+        <div className="txt-lv02 mt-1 text-gray-600 ">
+          {pm.fnclPdDsCd === '01' ? (
+            <>
+              <span className="text-blue-500 pr-1 align-middle">
+                {pm.intrTppoCntnt}
+              </span>
+              <span className="text-blue-500 font-bold text-lg pr-1 align-middle">
+                {pm.maxRate}
+              </span>
+              <span className="period ml-0 text-blue-600 align-middle">
+                {pm.rtTrmInfo}
+              </span>
+            </>
+          ) : pm.fnclPdDsCd === '02' ? (
+            <>
+              {pm.intrTppoCntnt != null && pm.rate != null && (
+                <>
+                  <span className="text-blue-600 text-sm">
+                    {pm.intrTppoCntnt}
+                  </span>
+                  <span className="text-blue-600 font-bold">{pm.rate}</span>
+                </>
+              )}
+
+              {pm.lmtDesc != null && pm.lmtInfo != null && (
+                <>
+                  <span
+                    className={`text-blue-600 text-sm ${pm.rate && 'ml-4'}`}
+                  >
+                    {pm.lmtDesc}
+                  </span>
+                  <span className="text-blue-600 font-bold">{pm.lmtInfo}</span>
+                </>
+              )}
+            </>
+          ) : (
+            <>
+              <span>{pm.intrTppoCntnt}</span>
+              {pm.rtInfo && <span>{pm.rtInfo}</span>}
+            </>
           )}
         </div>
-        <div className="flex-1 overflow-hidden">
-          <em className="flex items-center">
-            <span className="tit-prd font-bold text-2xl">{pm.chnlPdNm}</span>
-            {pm.pdListBdg1 && (
-              <span className="ico-new inline-block text-sm ml-2 p-1 text-white bg-blue-600 rounded-full">
-                {pm.pdListBdg1}
-              </span>
-            )}
-
-            {pm.pdListBdg2 && (
-              <div className="ico-new-line ml-2 text-sm text-blue-600 border-2 p-1 border-blue-600 inline-block rounded-2xl">
-                {pm.pdListBdg2}
-              </div>
-            )}
-          </em>
-          <div className="txt-lv02 mt-1 text-gray-600">{pm.mainTit}</div>
-          <div className="txt-lv02 mt-1 text-gray-600 ">
-            {pm.fnclPdDsCd === '01' ? (
-              <>
-                <span className="text-blue-500 pr-1 align-middle">
-                  {pm.intrTppoCntnt}
-                </span>
-                <span className="text-blue-500 font-bold text-lg pr-1 align-middle">
-                  {pm.maxRate}
-                </span>
-                <span className="period ml-0 text-blue-600 align-middle">
-                  {pm.rtTrmInfo}
-                </span>
-              </>
-            ) : pm.fnclPdDsCd === '02' ? (
-              <>
-                {pm.intrTppoCntnt != null && pm.rate != null && (
-                  <>
-                    <span className="text-blue-600 text-sm">
-                      {pm.intrTppoCntnt}
-                    </span>
-                    <span className="text-blue-600 font-bold">{pm.rate}</span>
-                  </>
-                )}
-
-                {pm.lmtDesc != null && pm.lmtInfo != null && (
-                  <>
-                    <span
-                      className={`text-blue-600 text-sm ${pm.rate && 'ml-4'}`}
-                    >
-                      {pm.lmtDesc}
-                    </span>
-                    <span className="text-blue-600 font-bold">
-                      {pm.lmtInfo}
-                    </span>
-                  </>
-                )}
-              </>
-            ) : (
-              <>
-                <span>{pm.intrTppoCntnt}</span>
-                {pm.rtInfo && <span>{pm.rtInfo}</span>}
-              </>
-            )}
-          </div>
-        </div>
-      </a>
+      </div>
     </li>
   )
 }
